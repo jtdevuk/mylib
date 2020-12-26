@@ -4,9 +4,11 @@ const searchGoogle = function(string) {
     .then(response => response.json())
     .then((data) => {
       data.items.forEach(function(element) {
-        const cardHTML = `<h3>${element.volumeInfo.title}</h3>
-                          <img src="${element.volumeInfo.imageLinks.thumbnail}"class="card-image"></img>
-                          <p>${element.volumeInfo.description}</p>`
+        const cardHTML = `<div class="book-card">
+                            <h3>${element.volumeInfo.title}</h3>
+                            <img src="${element.volumeInfo.imageLinks.thumbnail}"class="search-results-img"></img>
+                            <p>${element.volumeInfo.description.substring(0,200)}...</p>
+                          </div>`
         const resultsDiv = document.querySelector('.search-results');      
         resultsDiv.insertAdjacentHTML('beforeend', cardHTML);
       })
