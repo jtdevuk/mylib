@@ -13,6 +13,7 @@
 
 .book-card:hover {
   transform: scale(1.01);
+  cursor: pointer;
 }
 
 .book-card h3 {
@@ -24,9 +25,9 @@
 }
 
 .search-results {
+  margin-top: 20px;
   display: flex;
   width: 100%;
-  justify-content: space-around;
   flex-wrap: wrap;
 }
 

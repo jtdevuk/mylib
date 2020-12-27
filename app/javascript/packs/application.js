@@ -14,6 +14,8 @@ import { searchGoogle } from './books';
 
 document.addEventListener('turbolinks:load', () => {
   document.getElementById('search-books').addEventListener('submit', function(e) {
+    const resultsDiv = document.querySelector('.search-results');      
+    resultsDiv.innerHTML = "";
     e.preventDefault();
     const input = document.getElementById('search-books-text');    
     searchGoogle(input.value);
