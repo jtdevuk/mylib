@@ -29,7 +29,9 @@ const searchGoogle = function(string) {
         card.addEventListener('click', function() {          
         modal.classList.remove('hidden');
         modalBody.innerHTML = "";
-        modalTitle.textContent= data.items[index].volumeInfo.title;
+        modalTitle.innerHTML = "";
+        modalTitle.insertAdjacentHTML('afterbegin', `<h3>${data.items[index].volumeInfo.title}</h3>`);
+        // modalTitle.textContent = data.items[index].volumeInfo.title;
         modalBody.insertAdjacentHTML('beforeend', modalHTML);
         closeModal.addEventListener('click', function() {
           modal.classList.add('hidden');
